@@ -12,15 +12,31 @@ public class Main {
 		Random randomGenerator = new Random();
 		
 		// variabili
-		int idStudente;
+		int idStudente = 0;
 		int assenze;
 		float mediaVoti;
+		boolean promosso;
 		
 		for(int i = 0; i < studenti.length; i++) {
-			idStudente = randomGenerator.nextInt(20) + 1;
+			
+			// genera dati studente
+			idStudente++;
 			assenze = randomGenerator.nextInt(101);
 			mediaVoti = randomGenerator.nextInt(6);
-			System.out.println("ID:" + idStudente + "   assenze:" + assenze + "%   media voti:" + mediaVoti);
+			
+			// assegna dati a posiz. attuale array
+			studenti[i] = new CalcolaValutazione(idStudente, assenze, mediaVoti);
+			
+			// calcola se promosso
+			promosso = studenti[i].promosso();
+			
+			// stampa risultati
+			if (promosso) {
+				System.out.println("Lo studente con ID: " + idStudente + " è promosso.");
+			} else {
+				System.out.println("Lo studente con ID: " + idStudente + " è bocciato.");
+			}
+			
 		}
 		
 	}

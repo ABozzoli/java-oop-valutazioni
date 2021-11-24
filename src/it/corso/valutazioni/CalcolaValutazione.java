@@ -8,6 +8,11 @@ public class CalcolaValutazione {
 	float mediaVoti;
 	
 	// costruttori
+	CalcolaValutazione(int idStudente, int assenze, float mediaVoti){
+		this.idStudente = idStudente;
+		this.assenze = assenze;
+		this.mediaVoti = mediaVoti;
+	}
 	
 	// metodi
 	boolean promosso() {
